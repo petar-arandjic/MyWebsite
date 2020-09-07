@@ -12,7 +12,7 @@
         :class="{ 'C-skills__container--gray': index % 2 === 0 }"
       >
         <div class="C-skills__container__left">
-          <h4 class="C-skills__container__left__headline">{{ skillType }}</h4>
+          <h3 class="C-skills__container__left__headline">{{ skillType }}</h3>
         </div>
 
         <div class="C-skills__container__right">
@@ -76,7 +76,7 @@ export default {
 
     padding-top: var(--vertical-padding);
     /*padding-bottom: var(--vertical-padding);*/
-    font-family: Roboto_Slab-Light;
+    font-family: Inconsolata-Regular;
   }
 
   #C-skills__headline_container{
@@ -149,7 +149,7 @@ export default {
   }
 
   .C-skills__container__right__cards__icon__svg{
-    max-width: 120px;
+    max-width: 80px;
     height: 70px;
   }
 
