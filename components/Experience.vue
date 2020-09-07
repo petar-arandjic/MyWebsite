@@ -9,8 +9,8 @@
         :key="index"
       >
         <div class="C-ec__elements__header">
-          <h5><fa :icon="[job.icon.prefix, job.icon.icon]"/>  {{ job.companyName }}</h5>
-          <h5>{{ job.workedSince }}-{{ job.workedUntil }}</h5>
+          <h5 class="C-ec__elements__header__left_text"><fa :icon="[job.icon.prefix, job.icon.icon]"/>  {{ job.companyName }}</h5>
+          <h5 class="C-ec__elements__header__right_text">{{ job.workedSince }}-{{ job.workedUntil }}</h5>
         </div>
         <div class="C-ec__elements__content">
           <div class="C-ec__elements__content__text">
@@ -137,6 +137,7 @@ export default {
 
     display: flex;
     align-items: center;
+    justify-content: center;
 
     height: 3rem;
 
@@ -162,6 +163,26 @@ export default {
     .C-experience{
       padding-left: 2rem;
       padding-right: 2rem;
+    }
+
+    .C-ec__elements__content{
+      flex-direction: column;
+      padding: 2rem;
+    }
+
+    .C-ec__elements__content__text{
+      max-width: 100%;
+
+      margin-bottom: 2rem;
+    }
+
+    .C-ec__elements__header__left_text{
+      margin-right: 0.5rem;
+    }
+
+    .C-ec__elements__header__right_text{
+      margin-left: 0.5rem;
+      text-align: right;
     }
   }
 

@@ -54,7 +54,7 @@
           "headline": "PHP",
           "subheadline": "Greatly enjoy working with frameworks such as Symfony, Pimcore and Laravel.",
           "paragraphs": [
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam cum ea, error et, eum explicabo facilis fuga harum id nobis pariatur quasi qu"
+            "I'm familiar and I work mostly with PHP object oriented programing, classes, interfaces and MVC architecture."
           ]
         },
         "color": "#474A8A"
@@ -66,9 +66,9 @@
         },
         "text": {
           "headline": "Symfony",
-          "subheadline": "Lorem ipsum dolor sit amet, consectetur adipisicing.",
+          "subheadline": "Micro framework for PHP, I work with: Routing, Annotations, Services and other must know tools.",
           "paragraphs": [
-            "For backend purposes Symfony is one of the framework that I most frequently use tru my work day. As someone who enjoys challenges and building scalable complex applications I have chance to work and learn Symfony's way of MVC architecture pattern, services, doctrine and other great tools."
+            "For backend purposes Symfony is one of the framework that I most frequently use throughout my work day. As someone who enjoys challenges and building scalable complex applications I have chance to work and learn Symfony's way of MVC architecture pattern, services, doctrine and other great tools."
           ]
         },
         "color": "#000000"
