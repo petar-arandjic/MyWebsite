@@ -1,0 +1,83 @@
+:root{
+  --navigation-bar-height: 5rem;
+  --horizontal-padding: 12rem;
+  --vertical-padding: 5rem
+}
+
+.shared__opacity-0{
+  opacity: 0;
+}
+
+h1{
+  font-size: 4em;
+}
+
+h2{
+  font-size: 1.8em;
+}
+
+h3{
+  font-size: 1.5em;
+}
+
+h4{
+  font-size: 1.5em;
+}
+
+h5{
+  font-size: 1.1em;
+}
+
+p{
+  font-size: 0.9em;
+}
+
+@media only screen and (max-width: 1200px) {
+  :root{
+    --horizontal-padding: 5rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  :root{
+    --horizontal-padding: 2rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+
+  :root{
+    --horizontal-padding: 0rem;
+  }
+
+  h1{
+    font-size: 2.5rem;
+  }
+
+  h2{
+    font-size: 1.5rem;
+  }
+
+  h3{
+    font-size: 1.2rem;
+  }
+  p{
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 329px) {
+  h1{
+    font-size: 2rem;
+  }
+
+  h2{
+    font-size: 1.2rem;
+  }
+  h3{
+    font-size: 0.8rem;
+  }
+  p{
+    font-size: 0.5rem;
+  }
+}

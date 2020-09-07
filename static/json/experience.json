@@ -1,0 +1,30 @@
+{
+  "experience": [
+    {
+      "companyName": "Asioso GmbH",
+      "workedSince": "10.2019",
+      "workedUntil": "present",
+      "icon": {
+        "prefix": "fas",
+        "icon": "code"
+      },
+      "headline": "B2B IT company based in Germany with additional office in Bosnia - Banja Luka",
+      "text": "I work as full stack web developer building scalable web applications: E-commerce, Pim, CaaS, etc.",
+      "button": {
+        "text": "Find more about Asioso",
+        "href": "https://www.asioso.com/"
+      }
+    },
+    {
+      "companyName": "Private project for Local Shipping Company",
+      "workedSince": "01.2018",
+      "workedUntil": "6.2018",
+      "icon": {
+        "prefix": "fas",
+        "icon": "window-restore"
+      },
+      "headline": "Pim system for local shipping company",
+      "text": "I developed the web application for local shipping company. Application used for business management and tracking of current active shipping's. I wrote this application using PHP, MySql and Javascript"
+    }
+  ]
+}

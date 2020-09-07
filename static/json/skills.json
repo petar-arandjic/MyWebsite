@@ -1,0 +1,169 @@
+{
+  "skills": {
+    "Frontend": [
+      {
+        "icon": {
+          "prefix": "fab",
+          "icon": "html5"
+        },
+        "text": {
+          "headline": "Basic web",
+          "subheadline": "Scss, bootstrap 5 and etc",
+          "paragraphs": [
+            "Profound knowledge of basic web technologies such as Html, Css, Bootstrap and Scss"
+          ]
+        },
+        "color": "#e34c26"
+      },
+      {
+        "icon": {
+          "prefix": "fab",
+          "icon": "js-square"
+        },
+        "text": {
+          "headline": "JavaScript",
+          "subheadline": "Learn the good parts.",
+          "paragraphs": [
+            "Great knowledge in basic Javascript functionalities such as: syntax, error handling, DOM Manipulation and ES6. I also possess good understanding of more advance javascript topics such as so-called hoisting, promises, asynchronous calls, event-loop and call stack."
+          ]
+        },
+        "color": "#f0db4f"
+      },
+      {
+        "icon": {
+          "prefix": "fab",
+          "icon": "vuejs"
+        },
+        "text": {
+          "headline": "Vue.js",
+          "subheadline": "Lets build your next project for the future with Vue and Nuxt.",
+          "paragraphs": [
+            "Enjoy working with modern Javascript frameworks such as Vue.js especially today when we have tools such Nuxt that allow us to create well structured and SEO friendly single page apps."
+          ]
+        },
+        "color": "#42b883"
+      }
+    ],
+    "Backend": [
+      {
+        "icon": {
+          "prefix": "fab",
+          "icon": "php"
+        },
+        "text": {
+          "headline": "PHP",
+          "subheadline": "Greatly enjoy working with frameworks such as Symfony, Pimcore and Laravel.",
+          "paragraphs": [
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam cum ea, error et, eum explicabo facilis fuga harum id nobis pariatur quasi qu"
+          ]
+        },
+        "color": "#474A8A"
+      },
+      {
+        "icon": {
+          "prefix": "fab",
+          "icon": "symfony"
+        },
+        "text": {
+          "headline": "Symfony",
+          "subheadline": "Lorem ipsum dolor sit amet, consectetur adipisicing.",
+          "paragraphs": [
+            "For backend purposes Symfony is one of the framework that I most frequently use tru my work day. As someone who enjoys challenges and building scalable complex applications I have chance to work and learn Symfony's way of MVC architecture pattern, services, doctrine and other great tools."
+          ]
+        },
+        "color": "#000000"
+      },
+      {
+        "icon": {
+          "link": "/icons/Pimcore-Logo.wine.svg"
+        },
+        "text": {
+          "headline": "Pimcore",
+          "subheadline": "Open-source enterprise PHP software platform.",
+          "paragraphs": [
+            "Highly scalable platform built on top of the Symfony framework. If you need: Pim, CaaS, E-commerce, Data-hub for you PWA or just CMS that already has necessary tools.",
+            "As the Pimcore developer I had the chance to work on E-commerce, standard website, features such as login systems, roles-permissions, payment systems and etc."
+          ],
+          "extra": {
+            "Prominent:": "One of the thing I'm proud of is that I managed to create highly dynamic product page that allows even basic user such content creator to change, design of the page, add product attributes as easily as drag and drop while maintaining fast import of the products for businesses that have a lot of products."
+          }
+        },
+        "color": "#57467B"
+      }
+    ],
+    "DevOps": [
+      {
+        "icon": {
+          "prefix": "fab",
+          "icon": "ubuntu"
+        },
+        "text": {
+          "headline": "Linux",
+          "subheadline": "My to go OS for work.",
+          "paragraphs": [
+            "I use Ubuntu as my work OS, I'm not advance user but I manage to navigate tru well ;)"
+          ]
+        },
+        "color": "#dd4814"
+      },
+      {
+        "icon": {
+          "prefix": "fab",
+          "icon": "docker"
+        },
+        "text": {
+          "headline": "DevOps tools",
+          "subheadline": "Docker/Vagrant and nginx",
+          "paragraphs": [
+            "I had the chance to work a little with virtual machines and docker images but i just scratched the surface  of the iceberg (happy to learn more)."
+          ]
+        },
+        "color": "#0db7ed"
+      }
+    ],
+    "Other": [
+      {
+        "icon": {
+          "prefix": "fab",
+          "icon": "github"
+        },
+        "text": {
+          "headline": "Version Control",
+          "subheadline": "Git: Github, Bitbucket ",
+          "paragraphs": [
+            "This is something I use frequently and everyday"
+          ]
+        },
+        "color": "#000000"
+      },
+      {
+        "icon": {
+          "prefix": "fab",
+          "icon": "jira"
+        },
+        "text": {
+          "headline": "Jira",
+          "subheadline": "Board, Backlog, Tasks",
+          "paragraphs": [
+            "As someone who works for enterprise company a understand importance of the time and task tracking."
+          ]
+        },
+        "color": "#0052cc"
+      },
+      {
+        "icon": {
+          "prefix": "fa",
+          "icon": "user"
+        },
+        "text": {
+          "headline": "Soft Skills",
+          "subheadline": "“Communication works for those who work at it.”",
+          "paragraphs": [
+            "Understanding the client needs and being able to find solution that is satisfying both for Client and Company is one of most important skill in any industry \"What is the use of your solution for Company if you are unable to explain to the client why he needs it.\""
+          ]
+        },
+        "color": "#57467B"
+      }
+    ]
+  }
+}
