@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="loading-page" :class="[isShown ? 'loading-page--show' : 'loading-page--hide']">
-    <img src="~/assets/Logo/PA-logo-white.svg" alt="">
+    <img class="loading-page__logo" src="~/assets/Logo/PA-logo-white.svg" alt="">
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
     justify-content: center;
     align-items: center;
 
-    top: 100%;
+    top: 120%;
     left: 0;
 
     width: 100%;
@@ -32,13 +32,17 @@ export default {
     z-index: 600;
   }
 
+  .loading-page__logo{
+    width: 10rem;
+  }
+
   .loading-page--show{
     animation: show_loading_page 300ms forwards;
   }
 
   @keyframes show_loading_page {
     0% {
-      top: -100%;
+      top: -120%;
     }
 
     100% {
@@ -56,7 +60,7 @@ export default {
     }
 
     100% {
-      top: 100%;
+      top: 120%;
     }
   }
 </style>
