@@ -2,11 +2,10 @@
   <div class="navigation">
     <div class="navigation__bar">
       <nuxt-link to="/">
-        <img src="~/assets/Logo/PA-logo.svg" height="30px" alt="">
-<!--        <i class="pa_website-PA-logo-01"></i>-->
+        <img class="navigation__bar__logo" src="~/assets/Logo/PA-logo.svg" height="30px" alt="">
       </nuxt-link>
-      <h4 class="navigation__bar__button" @click="toggleShowNavigationMenu">
-        Menu
+      <h4 id="navigation__menu_icon" class="navigation__bar__button" :class="[isVisible ? 'navigation__bar__button--animate' : '']" @click="toggleShowNavigationMenu">
+        <span>Menu</span>
       </h4>
     </div>
 
@@ -41,10 +40,16 @@ export default {
       this.toggleShowNavigationMenu()
       if (event.target.parentElement.getAttribute('href') !== this.$nuxt.$route.path) {
         this.showPreLoading(true)
+
       }
     },
     toggleShowNavigationMenu () {
       this.isVisible = !this.isVisible
+
+      const menuIcon = document.getElementById('navigation__menu_icon')
+
+      menuIcon.innerHTML = this.isVisible ? 'Close' : 'Menu'
+
       if (this.isFirstLoad) {
         this.isFirstLoad = false
       }
@@ -83,6 +88,11 @@ export default {
   .navigation__bar__button{
     cursor: pointer;
     font-weight: 300;
+    transition: transform 0.5s ease-out;
+  }
+
+  .navigation__bar__button--animate{
+    transform: rotateX(360deg);
   }
 
   .navigation__menu{
@@ -142,6 +152,30 @@ export default {
 
     to {
       top: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+
+    .navigation__bar{
+      background: white;
+      -webkit-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
+      box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
+
+      opacity: 0.95;
+    }
+  }
+
+  @media only screen and (max-width: 576px) {
+
+    .navigation__bar{
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .navigation__bar__logo{
+      height: 25px;
     }
   }
 </style>
