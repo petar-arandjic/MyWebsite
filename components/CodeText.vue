@@ -61,6 +61,9 @@ export default {
   mounted () {
     this.sliceString()
     window.addEventListener('scroll', this.sliceString)
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.sliceString)
   }
 }
 </script>
