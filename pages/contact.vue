@@ -2,13 +2,41 @@
   <div class="P-contact">
     <h1>CONTACT</h1>
     <div class="P-contact__container">
-      <form action="" class="P-contact__form">
+      <form id="contact_form" class="P-contact__form" @submit.prevent="handleContactForm">
         <h4>Basic info</h4>
-        <input type="text" placeholder="Please enter full name" required>
-        <input type="email" placeholder="Please Enter E-mail" required>
-        <h4 class="P-contact__form__headline_your_message">Your message</h4>
-        <textarea class="P-contact__form__textarea" placeholder="How can I help you?"></textarea>
-        <button type="submit" class="P-contact__form_button">Submit</button>
+        <input
+          v-model="contactFormData.full_name"
+          type="text"
+          placeholder="Please enter full name"
+          required
+        >
+
+        <input
+          v-model="contactFormData.email"
+          type="email"
+          placeholder="Please Enter E-mail"
+          required
+        >
+
+        <h4 class="P-contact__form__headline_your_message">
+          Your message
+        </h4>
+
+        <textarea
+          v-model="contactFormData.message"
+          class="P-contact__form__textarea"
+          placeholder="How can I help you?"
+        />
+
+        <button type="submit" class="P-contact__form_button">
+            Submit
+          <SubmitButton
+            :settings="buttonLoaderSettings"
+          />
+        </button>
+
+        <p class="P-contact__form__thank_message" :class="[thankYouMessageClass]">Thank you for contacting me, I will reply as soon as possible</p>
+
       </form>
       <div class="P-contact__container__other_ways">
         <div class="P-contact__container__other_ways__elements">
@@ -19,10 +47,10 @@
         <div class="P-contact__container__other_ways__elements">
           <h4>Find me on</h4>
           <div class="P-contact__container__other_ways__elements__content">
-            <i class="pa_website-github"></i><a href="https://github.com/Pi-Solution">Github</a>
+            <i class="pa_website-github" /><a href="https://github.com/Pi-Solution">Github</a>
           </div>
           <div class="P-contact__container__other_ways__elements__content">
-            <i class="pa_website-linkedin"></i><a href="https://www.linkedin.com/in/petar-arandjic-b288a8168/">LinkedIn</a>
+            <i class="pa_website-linkedin" /><a href="https://www.linkedin.com/in/petar-arandjic-b288a8168/">LinkedIn</a>
           </div>
         </div>
       </div>
@@ -34,14 +62,76 @@
 import { mapMutations } from 'vuex'
 
 export default {
-  name: 'contact',
-  methods: {
-    ...mapMutations({
-      togglePreLoading: 'main/togglePreLoading'
-    })
+  name: 'Contact',
+  data () {
+    return {
+      contactFormData: {
+        full_name: '',
+        email: '',
+        message: ''
+      },
+      buttonClass: '',
+      buttonLoaderSettings: {
+        bgColor: '#D36135',
+        active: false,
+        icon: {
+          size: '1rem',
+          color1: 'black',
+          color2: 'white'
+        }
+      },
+      thankYouMessageClass: 'shared__opacity-0'
+    }
   },
   mounted () {
     setTimeout(() => this.togglePreLoading(false), 300)
+  },
+  methods: {
+    ...mapMutations({
+      togglePreLoading: 'main/togglePreLoading'
+    }),
+    handleContactForm () {
+
+      const form = document.getElementById('contact_form')
+
+      this.buttonLoaderSettings.active = true
+
+      fetch('http://api.petar-arandjic.loc/contact/form', {
+
+        method: 'POST',
+
+        headers: {
+          'Content-Type': 'application/json'
+        },
+
+        body: JSON.stringify(this.contactFormData)
+
+      }).then((response) => {
+
+        return response.json()
+
+      }).then((data) => {
+
+        if (data.saved) {
+          // console.log('yes')
+
+          this.contactFormData = {
+            full_name: '',
+            email: '',
+            message: ''
+          }
+
+          this.buttonLoaderSettings.active = false
+
+          this.thankYouMessageClass = ''
+
+          form.reset()
+
+        }
+
+      })
+
+    }
   }
 }
 </script>
@@ -78,11 +168,26 @@ export default {
   .P-contact__form{
     position: relative;
     width: 40%;
+
+    transition: transform 0.5s;
+  }
+
+  .P-contact__form--hide{
+    transform: scale(0);
   }
 
   .P-contact__form h4{
     font-family: Roboto_Slab-Light;
     font-size: 1.4rem;
+  }
+
+  .P-contact__form__thank_message{
+
+    font-family: Roboto_Slab-Light;
+    margin-top: 1rem;
+
+    transition: opacity 500ms ease-in-out;
+
   }
 
   .P-contact__form input{
@@ -153,6 +258,7 @@ export default {
   }
 
   .P-contact__form_button{
+    position: relative;
     background: transparent;
 
     width: 100%;
@@ -167,6 +273,8 @@ export default {
     margin-top: 1.5em;
 
     cursor: pointer;
+
+    overflow: hidden;
   }
 
   .P-contact__form_button:active{
@@ -176,10 +284,6 @@ export default {
   .P-contact__form_button:hover{
     background: #D36135;
     color: white;
-  }
-
-  .P-contact__form_button:focus{
-    background: rgba(211, 97, 53, 0.8);
   }
 
   .P-contact__container__other_ways{
