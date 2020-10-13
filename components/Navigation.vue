@@ -98,7 +98,7 @@ export default {
   .navigation__menu{
     position: fixed;
 
-    top: -100%;
+    top: -120%;
 
     width: 100%;
     height: 100%;
@@ -137,7 +137,7 @@ export default {
 
   @keyframes navigation__menu--animate_show {
     from {
-      top: -100%;
+      top: -120%;
     }
 
     to {
@@ -151,7 +151,7 @@ export default {
     }
 
     to {
-      top: 100%;
+      top: 120%;
     }
   }
 
