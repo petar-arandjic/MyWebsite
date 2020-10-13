@@ -3,27 +3,35 @@
     <h3 class="codeHeadline"><CodeText :codeText="'getUser(\'Petar\').getExperience( )'" :codeTextFinished="codeTextFinished" :uniqueId="'CTSExperience'" /></h3>
     <div id="C-experience__container" class="C-experience__container">
       <h2>IT Experience</h2>
-      <div
-        class="C-ec__elements"
-        v-for="(job, index) in experience.experience"
-        :key="index"
-      >
-        <div class="C-ec__elements__header">
-          <h5 class="C-ec__elements__header__left_text"><fa :icon="[job.icon.prefix, job.icon.icon]"/>  {{ job.companyName }}</h5>
-          <h5 class="C-ec__elements__header__right_text">{{ job.workedSince }}-{{ job.workedUntil }}</h5>
-        </div>
-        <div class="C-ec__elements__content">
-          <div class="C-ec__elements__content__text">
-            <h5>{{ job.headline }}</h5>
-            <p>{{ job.text }}</p>
+      <div id="C-ec__element" class="shared__opacity-0">
+        <div
+          class="C-ec__elements"
+          v-for="(job, index) in experience.experience"
+          :key="index"
+        >
+          <div class="C-ec__elements__header">
+            <h5 class="C-ec__elements__header__left_text"><fa :icon="[job.icon.prefix, job.icon.icon]"/>  {{ job.companyName }}</h5>
+            <h5 class="C-ec__elements__header__right_text">{{ job.workedSince }}-{{ job.workedUntil }}</h5>
           </div>
-          <a
-            v-if="job.button"
-            :href="job.button.href"
-            target="_blank"
-          >{{ job.button.text }}</a>
+          <div class="C-ec__elements__content">
+            <div class="C-ec__elements__content__text">
+              <h5>{{ job.headline }}</h5>
+              <p>{{ job.text }}</p>
+            </div>
+            <a
+              class="C-ec__elements__content__button"
+              v-if="job.button"
+              :href="job.button.href"
+              target="_blank"
+            >{{ job.button.text }}</a>
+          </div>
         </div>
       </div>
+
+      <p class="download_cv">
+        <a href="/pdf/my-cv.pdf" download>Download</a> my CV as PDF
+      </p>
+
     </div>
   </div>
 </template>
@@ -40,13 +48,13 @@ export default {
   },
   methods: {
     codeTextFinished (state) {
-      // const experienceContainer = document.getElementById('C-experience__container')
-      // console.log(experienceContainer)
-      // if (state && introductionContainer.classList.contains('shared__opacity-0')) {
-      //   introductionContainer.classList.remove('shared__opacity-0')
-      // } else if (!state && !introductionContainer.classList.contains('shared__opacity-0')) {
-      //   introductionContainer.classList.add('shared__opacity-0')
-      // }
+      const experienceContainer = document.getElementById('C-ec__element')
+
+      if (state && experienceContainer.classList.contains('shared__opacity-0')) {
+        experienceContainer.classList.remove('shared__opacity-0')
+      } else if (!state && !experienceContainer.classList.contains('shared__opacity-0')) {
+        experienceContainer.classList.add('shared__opacity-0')
+      }
     }
   }
 }
@@ -55,7 +63,6 @@ export default {
 <style scoped>
   .C-experience{
     position: relative;
-    min-height: 100vh;
   }
 
   .C-experience h3{
@@ -80,6 +87,10 @@ export default {
   .C-experience__container{
     padding-left: var(--horizontal-padding);
     padding-right: var(--horizontal-padding);
+  }
+
+  #C-ec__element{
+    transition: opacity 1s ease-out;
   }
 
   .C-ec__elements{
@@ -130,7 +141,7 @@ export default {
     max-width: 60%;
   }
 
-  .C-ec__elements__content a{
+  .C-ec__elements__content__button{
     position: relative;
     /*margin-right: 2rem;*/
     padding: 0.5rem 1.5rem 0.5rem 1.5rem;
@@ -152,6 +163,14 @@ export default {
 
     text-decoration: none;
     color: inherit;
+
+    transition: margin-right 500ms;
+  }
+
+  .C-ec__elements__content__button:hover{
+
+    margin-right: 10px;
+
   }
 
   .C-ec__elements__content button:focus{
@@ -184,6 +203,15 @@ export default {
       margin-left: 0.5rem;
       text-align: right;
     }
+  }
+
+  .download_cv{
+    font-family: Inconsolata-ExtraBold;
+    margin-bottom: 2rem;
+  }
+
+  .download_cv a{
+    color: #D36135;
   }
 
 </style>

@@ -4,6 +4,7 @@
     <Introduction />
     <Skills />
     <Experience />
+    <Footer />
   </div>
 </template>
 
@@ -20,7 +21,6 @@ export default {
     })
   },
   mounted () {
-
     setTimeout(() => this.togglePreLoading(false), 300)
   }
 }

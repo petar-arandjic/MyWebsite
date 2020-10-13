@@ -67,6 +67,10 @@ export default {
 
   @media only screen and (max-width: 1200px) {
 
+    .C-landing__box{
+      padding-top: 6rem;
+    }
+
     .C-landing__box--shrink_size{
       animation: none;
     }
@@ -75,7 +79,7 @@ export default {
   @media only screen and (max-width: 576px) {
 
     .C-landing__box{
-      padding: 2rem;
+      padding: 4.5rem 2rem 2rem 2rem;
     }
   }
 
