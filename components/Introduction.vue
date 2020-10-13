@@ -5,11 +5,21 @@
       <h2 class="introduction__headline">Introduction</h2>
       <div class="introduction__container">
         <div class="introduction__container__elements">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dolore et ipsum maiores nostrum obcaecati quidem sit! Ad aliquid deleniti labore magni natus nesciunt non omnis quas ullam? Corporis doloribus eaque, earum est et ipsa quidem quos rem tempora ullam?</p>
+          <p>Hello I Petar,</p>
+          <p>
+            <br>
+            I'm passioned full stack web developer. I greatly enjoy working as developer especially on large scalable projects.
+            I consider my self to be professional, responsible and creative. I take pride in what I do. As someone who had the chance to work with many clients and co-workers
+            in and outside of my current profession I'm also skilled in communication and teamwork.
+            Below you will find my skills and experience, feel free to contact me if you have any further question.
+            <br>
+            <br>
+            Cheers.
+          </p>
         </div>
         <div class="introduction__container__elements icei--image">
           <div class="introduction__container__elements__image_container ">
-            <img class="testc" src="/images/laptop-1478822_1280.jpg">
+            <img src="/images/laptop-1478822_1280.jpg">
           </div>
         </div>
       </div>
@@ -19,7 +29,7 @@
 
 <script>
 export default {
-  name: 'Text',
+  name: 'Introduction',
   methods: {
     codeTextFinished (state) {
 
