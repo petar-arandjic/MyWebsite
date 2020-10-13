@@ -8,7 +8,7 @@
       <div
         class="C-skills__container"
         v-for="(skills, skillType, index) in mySkills.skills"
-        :key="skills"
+        :key="index"
         :class="{ 'C-skills__container--gray': index % 2 === 0 }"
       >
         <div class="C-skills__container__left">
@@ -17,7 +17,7 @@
 
         <div class="C-skills__container__right">
 
-          <div class="C-skills__container__right__cards" v-for="skill in skills" :key="skill">
+          <div class="C-skills__container__right__cards" v-for="( skill, index ) in skills" :key="index">
             <div class="C-skills__container__right__cards__icon">
               <fa
                 v-if="skill.icon.icon"
@@ -63,9 +63,6 @@ export default {
         introductionContainer.classList.add('shared__opacity-0')
       }
     }
-  },
-  mounted () {
-    console.log(this.mySkills)
   }
 }
 </script>
