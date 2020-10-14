@@ -25,10 +25,39 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
+
+      {
+        hid: 'apple-mobile-web-app-title',
+        property: 'apple-mobile-web-app-title',
+        content: 'Petar Arandjic - Full Stack Web Developer'
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Petar Arandjic - Full Stack Web Developer located in Bosnia, Banja Luka'
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: 'Petar-Arandjic.com'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'I\'m the full stack web developer working mostly with PHP, Symfony, Pimcore, Javascript and Vue'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: '/images/laptop-1478822_1280.jpg'
+      }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon_package_v0.16/favicon.ico' },
+
+      { rel: 'apple-touch-icon-precomposed', sizes: '114x114', href: '/favicon_package_v0.16/apple-touch-icon.png'}
+
     ]
   },
   /*

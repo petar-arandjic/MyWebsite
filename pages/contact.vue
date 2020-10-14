@@ -62,6 +62,17 @@
 import { mapMutations } from 'vuex'
 
 export default {
+  head: {
+    title: 'Contact - Petar Arandjic',
+    meta: [
+      {
+        hid: 'description',
+        property: 'description',
+        content: 'I\'m the full stack web developer contact me if you have interesting project I can help you out'
+      }
+
+    ]
+  },
   name: 'Contact',
   data () {
     return {
