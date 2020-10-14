@@ -147,16 +147,16 @@ export default {
       }
     },
     onError (error) {
-      console.log('Error happened:', error)
+      // console.log('Error happened:', error)
     },
     async onSubmit () {
       try {
         const token = await this.$recaptcha.getResponse()
-        console.log('ReCaptcha token:', token)
+        // console.log('ReCaptcha token:', token)
         await this.$recaptcha.reset()
       } catch (error) {
         // eslint-disable-next-line no-console
-        console.log('Login error:', error)
+        // console.log('Login error:', error)
       }
     },
     onSuccess (token) {
@@ -166,7 +166,7 @@ export default {
       this.googleReqValidation = true
     },
     onExpired () {
-      console.log('Expired')
+      // console.log('Expired')
     }
   }
 }
