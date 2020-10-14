@@ -34,7 +34,7 @@
             :settings="buttonLoaderSettings"
           />
         </button>
-
+        <recaptcha class="P-contact__google_req" @error="onError" @success="onSuccess" @expired="onExpired" />
         <p class="P-contact__form__thank_message" :class="[thankYouMessageClass]">Thank you for contacting me, I will reply as soon as possible</p>
 
       </form>
@@ -81,6 +81,7 @@ export default {
         email: '',
         message: ''
       },
+      googleReqValidation: false,
       buttonClass: '',
       buttonLoaderSettings: {
         bgColor: '#D36135',
@@ -103,45 +104,69 @@ export default {
     }),
     handleContactForm () {
 
-      const form = document.getElementById('contact_form')
+      if (this.googleReqValidation) {
 
-      this.buttonLoaderSettings.active = true
+        const form = document.getElementById('contact_form')
 
-      fetch('http://api.petar-arandjic.loc/contact/form', {
+        this.buttonLoaderSettings.active = true
 
-        method: 'POST',
+        fetch('http://api.petar-arandjic.loc/contact/form', {
 
-        headers: {
-          'Content-Type': 'application/json'
-        },
+          method: 'POST',
 
-        body: JSON.stringify(this.contactFormData)
+          headers: {
+            'Content-Type': 'application/json'
+          },
 
-      }).then((response) => {
+          body: JSON.stringify(this.contactFormData)
 
-        return response.json()
+        }).then((response) => {
 
-      }).then((data) => {
+          return response.json()
 
-        if (data.saved) {
-          // console.log('yes')
+        }).then((data) => {
 
-          this.contactFormData = {
-            full_name: '',
-            email: '',
-            message: ''
+          if (data.saved) {
+            // console.log('yes')
+
+            this.contactFormData = {
+              full_name: '',
+              email: '',
+              message: ''
+            }
+
+            this.buttonLoaderSettings.active = false
+
+            this.thankYouMessageClass = ''
+
+            form.reset()
+
           }
 
-          this.buttonLoaderSettings.active = false
-
-          this.thankYouMessageClass = ''
-
-          form.reset()
-
-        }
-
-      })
-
+        })
+      }
+    },
+    onError (error) {
+      console.log('Error happened:', error)
+    },
+    async onSubmit () {
+      try {
+        const token = await this.$recaptcha.getResponse()
+        console.log('ReCaptcha token:', token)
+        await this.$recaptcha.reset()
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log('Login error:', error)
+      }
+    },
+    onSuccess (token) {
+      console.log('Succeeded:', token)
+      // here you submit the form
+      // this.$refs.form.submit()
+      this.googleReqValidation = true
+    },
+    onExpired () {
+      console.log('Expired')
     }
   }
 }
@@ -199,6 +224,10 @@ export default {
 
     transition: opacity 500ms ease-in-out;
 
+  }
+
+  .P-contact__google_req{
+    margin-top: 1.5rem;
   }
 
   .P-contact__form input{

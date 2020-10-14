@@ -88,8 +88,17 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/recaptcha'
   ],
+
+  recaptcha: {
+    hideBadge: false, // Hide badge element (v3 & v2 via size=invisible)
+    siteKey: '6LfybtcZAAAAABUEBG_kIlveKxDttpJvKksJ_3ya', // Site key for requests
+    version: 2, // Version
+    size: 'normal' // Size: 'compact', 'normal', 'invisible' (v2)
+  },
+
   fontawesome:{
     component: 'fa',
     icons: {
