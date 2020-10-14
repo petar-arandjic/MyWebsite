@@ -28,9 +28,9 @@
         </div>
       </div>
 
-      <p class="download_cv">
+      <h4 class="download_cv">
         <a href="/pdf/my-cv.pdf" download>Download</a> my CV as PDF
-      </p>
+      </h4>
 
     </div>
   </div>

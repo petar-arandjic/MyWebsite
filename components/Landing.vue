@@ -68,7 +68,18 @@ export default {
   @media only screen and (max-width: 1200px) {
 
     .C-landing__box{
+      justify-content: flex-start;
+
       padding-top: 6rem;
+    }
+
+    .C-landing__box h2{
+      text-align: left;
+      border-bottom: none;
+      border-top: 1px solid white;
+
+      margin-top: 0.5rem;
+      padding-top: 0.5rem;
     }
 
     .C-landing__box--shrink_size{
