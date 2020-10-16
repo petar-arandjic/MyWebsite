@@ -34,8 +34,11 @@
             :settings="buttonLoaderSettings"
           />
         </button>
+        <div class="P-contact__form__message_container" :class="[formMessageClasses]">
+          <p class="P-contact__form__thank_message">{{ formMessage }}</p>
+        </div>
+
         <recaptcha class="P-contact__google_req" @error="onError" @success="onSuccess" @expired="onExpired" />
-        <p class="P-contact__form__thank_message" :class="[thankYouMessageClass]">Thank you for contacting me, I will reply as soon as possible</p>
 
       </form>
       <div class="P-contact__container__other_ways">
@@ -79,8 +82,10 @@ export default {
       contactFormData: {
         full_name: '',
         email: '',
-        message: ''
+        message: '',
+        reQapToken: ''
       },
+      ReqapError: '',
       googleReqValidation: false,
       buttonClass: '',
       buttonLoaderSettings: {
@@ -92,7 +97,8 @@ export default {
           color2: 'white'
         }
       },
-      thankYouMessageClass: 'shared__opacity-0'
+      formMessageClasses: 'shared__opacity-0',
+      formMessage: ''
     }
   },
   mounted () {
@@ -127,19 +133,28 @@ export default {
         }).then((data) => {
 
           if (data.saved) {
-            // console.log('yes')
+            //console.log(data)
 
             this.contactFormData = {
               full_name: '',
               email: '',
-              message: ''
+              message: '',
+              reQapToken: ''
             }
+
+            this.formMessage = data.message
 
             this.buttonLoaderSettings.active = false
 
-            this.thankYouMessageClass = ''
+            this.formMessageClasses = 'P-contact__form__message_container--successful'
 
             form.reset()
+
+          } else {
+
+            this.buttonLoaderSettings.active = false
+
+            this.formMessageClasses = 'P-contact__form__message_container--failed'
 
           }
 
@@ -148,11 +163,13 @@ export default {
     },
     onError (error) {
       // console.log('Error happened:', error)
+      this.ReqapError = error
+
     },
     async onSubmit () {
       try {
-        const token = await this.$recaptcha.getResponse()
         // console.log('ReCaptcha token:', token)
+        // this.reQapToken = await this.$recaptcha.getResponse()
         await this.$recaptcha.reset()
       } catch (error) {
         // eslint-disable-next-line no-console
@@ -160,9 +177,12 @@ export default {
       }
     },
     onSuccess (token) {
-      console.log('Succeeded:', token)
+      // console.log('Succeeded:', token)
       // here you submit the form
       // this.$refs.form.submit()
+
+      this.contactFormData.reQapToken = token
+
       this.googleReqValidation = true
     },
     onExpired () {
@@ -217,12 +237,42 @@ export default {
     font-size: 1.4rem;
   }
 
+  .P-contact__form__message_container{
+    position: relative;
+
+    min-height: 40px;
+
+    margin-top: 1rem;
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    display: flex;
+    align-items: center;
+
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+  }
+
+  .P-contact__form__message_container--successful{
+    opacity: 1;
+
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+  }
+
+  .P-contact__form__message_container--failed{
+    opacity: 1;
+
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+  }
+
   .P-contact__form__thank_message{
 
     font-family: Roboto_Slab-Light;
-    margin-top: 1rem;
-
-    transition: opacity 500ms ease-in-out;
 
   }
 
