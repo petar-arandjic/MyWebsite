@@ -152,13 +152,29 @@ export default {
 
           } else {
 
+            this.formMessage = data.message
+
             this.buttonLoaderSettings.active = false
 
             this.formMessageClasses = 'P-contact__form__message_container--failed'
 
           }
 
+        }).catch(() => {
+
+          this.formMessage = 'Server error please try again later or try other method of contacting me. Thanks'
+
+          this.buttonLoaderSettings.active = false
+
+          this.formMessageClasses = 'P-contact__form__message_container--failed'
+
         })
+      } else {
+
+        this.formMessage = 'Please check google reCaptcha below'
+
+        this.formMessageClasses = 'P-contact__form__message_container--failed'
+
       }
     },
     onError (error) {
