@@ -116,7 +116,7 @@ export default {
 
         this.buttonLoaderSettings.active = true
 
-        fetch('http://api.petar-arandjic.loc/contact/form', {
+        fetch('http://api.petar-arandjic.com/contact/form', {
 
           method: 'POST',
 
@@ -133,7 +133,7 @@ export default {
         }).then((data) => {
 
           if (data.saved) {
-            //console.log(data)
+            // console.log(data)
 
             this.contactFormData = {
               full_name: '',
