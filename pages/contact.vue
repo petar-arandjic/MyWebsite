@@ -116,7 +116,7 @@ export default {
 
         this.buttonLoaderSettings.active = true
 
-        fetch('http://api.petar-arandjic.com/contact/form', {
+        fetch('https://api.petar-arandjic.com/contact/form', {
 
           method: 'POST',
 
