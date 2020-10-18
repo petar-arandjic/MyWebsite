@@ -32,7 +32,7 @@ export default {
     Settings: {
       handler () {
         this.showLoaderClass = this.Settings.active ? '_C_S_A-SB--show' : ''
-        console.log(this.showLoaderClass)
+        // console.log(this.showLoaderClass)
       },
       deep: true
     }
