@@ -1,3 +1,4 @@
+import { GA_ID } from './env'
 
 export default {
   loading: '~/components/PreLoading.vue',
@@ -89,7 +90,10 @@ export default {
   */
   modules: [
     '@nuxtjs/pwa',
-    '@nuxtjs/recaptcha'
+    '@nuxtjs/recaptcha',
+    ['@nuxtjs/google-analytics', {
+      id: GA_ID || ''
+    }]
   ],
 
   recaptcha: {
