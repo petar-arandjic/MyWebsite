@@ -94,7 +94,7 @@ export default {
 
   recaptcha: {
     hideBadge: false, // Hide badge element (v3 & v2 via size=invisible)
-    siteKey: '6LfybtcZAAAAABUEBG_kIlveKxDttpJvKksJ_3ya', // Site key for requests
+    siteKey: '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI', // Site key for requests
     version: 2, // Version
     size: 'normal' // Size: 'compact', 'normal', 'invisible' (v2)
   },

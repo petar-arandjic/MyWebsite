@@ -3,6 +3,7 @@
     <div class="C-landing__box C-landing__box--dark C-landing__box--full_size" :class="{'C-landing__box--shrink_size': shrinkLandingBox}">
       <h1>Petar Arandjic</h1>
       <h2>Full Stack Developer</h2>
+      <WindowElement />
     </div>
   </div>
 </template>

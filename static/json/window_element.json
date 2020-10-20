@@ -1,0 +1,26 @@
+[
+  {
+    "text": "DEVELOP",
+    "bgImage": "/images/window_element/img1.jpg"
+  },
+  {
+    "text": "Discover",
+    "bgImage": "/images/window_element/img2.jpg"
+  },
+  {
+    "text": "Research",
+    "bgImage": "/images/window_element/img3.jpg"
+  },
+  {
+    "text": "learn",
+    "bgImage": "/images/window_element/img4.jpg"
+  },
+  {
+    "text": "invent",
+    "bgImage": "/images/window_element/img5.png"
+  },
+  {
+    "text": "solve",
+    "bgImage": "/images/window_element/img4.jpg"
+  }
+]
