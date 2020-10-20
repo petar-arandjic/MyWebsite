@@ -29,7 +29,8 @@ export default {
       HTMLElements: '',
       elementsLength: elements.length,
       bgColor: 'red',
-      text: 'Develop'
+      text: 'Develop',
+      slideInterval: ''
     }
   },
   methods: {
@@ -41,10 +42,10 @@ export default {
   },
   mounted () {
     this.HTMLElements = document.getElementsByClassName('window_element__bubble')
-    setInterval(this.setNextSlide, 200)
+    this.slideInterval = setInterval(this.setNextSlide, 200)
   },
   beforeDestroy () {
-    clearInterval(this.setNextSlide)
+    clearInterval(this.slideInterval)
   }
 }
 </script>
