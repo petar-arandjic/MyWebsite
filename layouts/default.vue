@@ -11,7 +11,12 @@ import Navigation from '../components/Navigation'
 import PreLoading from '../components/PreLoading'
 
 export default {
-  components: { PreLoading, Navigation }
+  components: { PreLoading, Navigation },
+  mounted () {
+    window.addEventListener('load', () => {
+      document.body.style.overflow = 'auto'
+    })
+  }
 }
 
 </script>
@@ -37,6 +42,10 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+
+body{
+  overflow: hidden;
 }
 
 *,
