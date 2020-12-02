@@ -5,11 +5,14 @@
       <h2 class="introduction__headline">Introduction</h2>
       <div class="introduction__container">
         <div class="introduction__container__elements">
-          <p>Hello I Petar,</p>
+          <p>Hello I'm Petar,</p>
           <p>
             <br>
             I'm passioned full stack web developer. I greatly enjoy working as developer especially on large scalable projects.
-            I consider my self to be professional, responsible and creative. I take pride in what I do. As someone who had the chance to work with many clients and co-workers
+            I consider my self to be professional, responsible and creative. I take pride in what I do.
+            <br>
+            <br>
+            As someone who had the chance to work with many clients and co-workers
             in and outside of my current profession I'm also skilled in communication and teamwork.
             Below you will find my skills and experience, feel free to contact me if you have any further question.
             <br>
